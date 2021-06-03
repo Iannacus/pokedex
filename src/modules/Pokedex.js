@@ -52,12 +52,12 @@ function Pokedex() {
         if (data.length > 0) {
             setPageNumber(Math.ceil(data.length / number));
             setPokemonArray(data.slice(startSlice, endSlice));
-            setIsNavigating(false);
         }
-    }, [data, number, startSlice, endSlice]);
+    }, [data, number, startSlice, endSlice, isNavigating]);
 
     const handleConsult = (values) => {
         setPokemonName(values.pokemon);
+        setIsNavigating('false');
     }
 
     const handdleType = (value) => {

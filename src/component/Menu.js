@@ -10,17 +10,17 @@ function Menu({ home, back }) {
         <div className='menu'>
             <div className='m-element'>
 
-                <i class="fas fa-sign-out-alt" onClick={() => singOut(() => { })}></i>
+                <i className="fas fa-sign-out-alt" onClick={() => singOut(() => { })}></i>
             </div>
 
             <div className='m-element'>
                 <Link to={home}>
-                    <i class="fas fa-home"></i>
+                    <i className="fas fa-home"></i>
                 </Link>
             </div>
             <div className='m-element'>
                 <Link to={back}>
-                    <i class="fas fa-arrow-circle-left"></i>
+                    <i className="fas fa-arrow-circle-left"></i>
                 </Link>
 
             </div>
