@@ -4,32 +4,45 @@ import Pokedex from './modules/Pokedex';
 import Login from './modules/Login';
 import Pokemon from './modules/Pokemon';
 import Encounters from './modules/Encounters';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
-import { useAuth, ProvideAuth } from './provider/AuthProvider';
+import Conf from './modules/Conf';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { ProvideAuth } from './provider/AuthProvider';
+import { ProvidePokemonContext } from './component/PokemonContext'
 import ProtectedRoute from './component/ProtectedRoute';
-import ThemeSup from './modules/ThemeSup';
+import { useBgContext } from './component/BgContext'
+
 
 
 
 function App() {
 
+  const { bg } = useBgContext();
+  console.log(bg);
+
   return (
-    <div className="App">
+    <div className="App" >
+      <style>{`body {background-image: url('${bg}');}`}</style>
       <ProvideAuth >
         <Router>
           <ProtectedRoute path='/pokedex/pokemon/:id/encounters'>
             <Encounters />
           </ProtectedRoute>
-
           <ProtectedRoute path='/pokedex/pokemon/:id'>
             <Pokemon />
           </ProtectedRoute>
-          <ProtectedRoute path='/pokedex'>
-            <Pokedex></Pokedex>
-          </ProtectedRoute>
-          <Route path="/">  <Login /> </Route>
+          <ProvidePokemonContext >
+            <ProtectedRoute path='/pokedex'>
+              <Pokedex />
+            </ProtectedRoute>
+            <ProtectedRoute path='/conf'>
+              <Conf />
+            </ProtectedRoute>
+          </ProvidePokemonContext>
+          <Route path="/login">  <Login /> </Route>
+          <Route path="/">  <Redirect to="/login" /> </Route>
         </Router>
       </ProvideAuth>
+
 
     </div>
 

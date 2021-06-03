@@ -2,23 +2,29 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import Search from './Search';
 import ThemeSup from './ThemeSup';
+import ConfigButton from './ConfigButton';
 import ThemeBot from './ThemeBot';
 import Pagination from './Pagination';
 import { useRouteMatch } from 'react-router-dom';
+import { usePokeContext } from '../component/PokemonContext'
+
+
 
 function Pokedex() {
+
+    const pokeContext = usePokeContext();
     let { url } = useRouteMatch();
     const [type, setType] = useState(-1);
     const [pokemonName, setPokemonName] = useState('');
     const [data, setData] = useState([]);
     const [pokemonArray, setPokemonArray] = useState([]);
-    const [number, setNumber] = useState(4);
+    const [number, setNumber] = useState(pokeContext.displayPokemon);
     const [pageNumber, setPageNumber] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
     const [startSlice, setStartSlice] = useState(0);
     const [endSlice, setEndSlice] = useState(4);
     const [isNavigating, setIsNavigating] = useState(false);
-    console.log(url)
+
 
 
     useEffect(() => {
@@ -85,6 +91,7 @@ function Pokedex() {
         <>
             <ThemeSup />
             <div className='pokegrid'>
+                <ConfigButton />
                 <Search
                     handdler={handdleType}
                     handleNumber={handleNumber}
@@ -94,6 +101,7 @@ function Pokedex() {
                 <div className="pokemons">
                     {list}
                 </div>
+
                 <Pagination
                     handlerActive={handlerActive}
                     pages={pageNumber}

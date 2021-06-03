@@ -2,16 +2,16 @@ import React, { useEffect } from 'react'
 import ThemeSup from './ThemeSup';
 import ThemeBot from './ThemeBot'
 import { useAuth } from '../provider/AuthProvider'
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 function Login() {
     const { handleSubmit, register } = useForm();
     const { singIn, pokemonTrainer } = useAuth();
+    console.log(useAuth())
     const history = useHistory();
 
     const onSubmit = (values) => {
-        console.log(values)
         singIn(values.pokemonTrainer, () => { });
     }
 

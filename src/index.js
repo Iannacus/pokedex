@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ProvideBgContext } from './component/BgContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProvideBgContext>
+      <App />
+    </ProvideBgContext>
 
   </React.StrictMode>,
   document.getElementById('root')

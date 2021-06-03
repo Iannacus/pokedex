@@ -40,3 +40,14 @@ export const colors = {
     steel: '#B7B7CE',
     fairy: '#D685AD',
 };
+
+export const images = [
+    'https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/city.jpg',
+    'https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/arena.jpg',
+    'https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/forest.jpg',
+    'https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/canyon.jpg',
+    'https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/cave.jpg',
+    'https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/coast.jpg',
+    'https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/glacier.jpg',
+    'https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/volcano.jpg',
+]

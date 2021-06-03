@@ -35,17 +35,6 @@ function Search({ handdler, handleNumber, handleConsult }) {
                 <input type='text' placeholder='Search by namae or pokemon number' {...register('pokemon', { required: true })} />
                 <button>Search</button>
             </div>
-            <div className="select__form" name="types">
-                <label htmlFor="number">Select NUmber of Pokemons to display</label>
-                <select className="number" id="number" onChange={(e) => handleNumber(e)}>
-                    <option value='4'>4</option>
-                    <option value='8'>8</option>
-                    <option value='12'>12</option>
-                    <option value='16'>16</option>
-                    <option value='20'>20</option>
-                    <option value='24'>24</option>
-                </select>
-            </div>
         </form>
     )
 }
