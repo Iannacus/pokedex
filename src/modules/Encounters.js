@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ThemeSup from './ThemeSup';
 import ThemeBot from './ThemeBot';
 import { useParams } from 'react-router-dom';
+import Menu from '../component/Menu';
 
 function Encounters() {
     const { id } = useParams();
@@ -26,6 +27,10 @@ function Encounters() {
             <ThemeSup />
             <div className='pokegrid'>
 
+                <Menu
+                    home={'/pokedex'}
+                    back={`/pokedex/pokemon/${id}`}
+                />
             </div>
             <ThemeBot />
         </>

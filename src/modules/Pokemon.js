@@ -4,6 +4,7 @@ import ThemeBot from './ThemeBot';
 import Move from './Move'
 import { iconTypes, colors } from '../resources/types'
 import { Link, useParams, useRouteMatch } from 'react-router-dom';
+import Menu from '../component/Menu';
 
 function Pokemon() {
     const { id } = useParams();
@@ -34,11 +35,10 @@ function Pokemon() {
         fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then(response => response.json())
             .then(info => setData(info));
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         if (data) {
-            console.log(data)
             setNumber(data.id)
             setName(data.name)
             setAttack(data.stats[1].base_stat);
@@ -86,8 +86,9 @@ function Pokemon() {
         }
     }, [type1, type2])
 
-    const moveList = moves.map(move =>
+    const moveList = moves.map((move, i) =>
         <Move
+            key={i}
             name={move.move.name}
         />
     );
@@ -114,10 +115,10 @@ function Pokemon() {
                         <Link to={`${url}/encounters`} ><button>Encounters </button></Link>
                     </div>
                     <div className='column-grid'>
-                        <div class='dos'>
+                        <div className='dos'>
                             <div className='cristal__animation-i' style={{ borderColor: `${color}` }}></div>
                             <div className='cristal__animation-d' style={{ borderColor: `${color2}` }}></div>
-                            <img src={img} width='110%'></img>
+                            <img src={img} alt='icon' width='110%'></img>
 
                         </div>
 
@@ -179,7 +180,10 @@ function Pokemon() {
 
                     </div>
                 </div>
-
+                <Menu
+                    home={'/pokedex'}
+                    back={'/pokedex'}
+                />
 
             </div>
             <ThemeBot />

@@ -3,7 +3,6 @@ import { Route, Redirect } from 'react-router';
 
 
 const ProtectedRoute = ({ children, ...props }) => {
-    console.log('2');
     const auth = useAuth();
     return <Route
         {...props}

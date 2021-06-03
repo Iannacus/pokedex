@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Pagination({ pages, handlerActive, current }) {
-    //console.log(pages)
     const paginationList = [];
     let cls = '';
     let startSlice = 0;

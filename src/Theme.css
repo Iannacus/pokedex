@@ -156,6 +156,7 @@ p {
     padding-bottom: 30px;
     background-color: #008ee044;
     backdrop-filter: blur(9px);
+    position:relative;
   }
 
   @media (min-width:1475px){
@@ -810,3 +811,8 @@ li {
   font-size: 16px;
 }
 
+.menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

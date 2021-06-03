@@ -8,7 +8,6 @@ import { useForm } from 'react-hook-form';
 function Login() {
     const { handleSubmit, register } = useForm();
     const { singIn, pokemonTrainer } = useAuth();
-    console.log(useAuth())
     const history = useHistory();
 
     const onSubmit = (values) => {

@@ -6,6 +6,7 @@ import ThemeBot from './ThemeBot';
 import Pagination from './Pagination';
 import { useRouteMatch } from 'react-router-dom';
 import { usePokeContext } from '../component/PokemonContext'
+import Menu from '../component/Menu';
 
 
 
@@ -48,7 +49,6 @@ function Pokedex() {
             setEndSlice(number);
             setCurrentPage(1);
         }
-        //console.log(data);
         if (data.length > 0) {
             setPageNumber(Math.ceil(data.length / number));
             setPokemonArray(data.slice(startSlice, endSlice));
@@ -103,6 +103,10 @@ function Pokedex() {
                     handlerActive={handlerActive}
                     pages={pageNumber}
                     current={currentPage}
+                />
+                <Menu
+                    home={'/pokedex'}
+                    back={'/login'}
                 />
             </div>
             <ThemeBot />

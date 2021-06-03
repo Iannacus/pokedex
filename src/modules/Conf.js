@@ -4,6 +4,7 @@ import ThemeBot from './ThemeBot';
 import Thumbnail from './Thumbnail';
 import { usePokeContext } from '../component/PokemonContext'
 import { images } from '../resources/types'
+import Menu from '../component/Menu';
 
 function Conf() {
 
@@ -42,6 +43,10 @@ function Conf() {
                         {imgList}
                     </div>
                 </div>
+                <Menu
+                    home={'/pokedex'}
+                    back={'/pokedex'}
+                />
             </div>
             <ThemeBot />
         </>

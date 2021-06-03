@@ -21,7 +21,6 @@ const useProvidePokemon = () => {
 }
 
 export const ProvidePokemonContext = ({ children }) => {
-    console.log(useProvidePokemon());
     return <pokemonContext.Provider value={useProvidePokemon()}>
         {children}
     </pokemonContext.Provider>

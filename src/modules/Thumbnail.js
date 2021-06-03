@@ -3,7 +3,7 @@ import { useBgContext } from '../component/BgContext';
 
 function Thumbnail({ img, alt }) {
 
-    const { changeBg, bg } = useBgContext();
+    const { changeBg } = useBgContext();
 
     const handleClick = value => {
         changeBg.change(value.target.src);
