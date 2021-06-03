@@ -74,7 +74,7 @@ function Card({ pokeUrl, url }) {
                 <div className='cristal__animation' style={{ borderColor: `${color}` }}></div>
                 <div className='cristal__animation2' style={{ borderColor: `${color2}` }}></div>
                 <div className="pokename">
-                    <Link to={`${url}/pokemon/${id}`}><h2>{name}</h2></Link>
+                    <Link to={`${url}/pokemon/${id}`}><h2 className='stroke-y'>{name}</h2></Link>
                 </div>
                 <img src={img} alt="" width='150px' />
                 <div className='types'>

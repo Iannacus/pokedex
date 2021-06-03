@@ -27,9 +27,9 @@ function Login() {
             <ThemeSup />
             <div className='pokegrid'>
                 <form className='login' onSubmit={handleSubmit(onSubmit)}>
-                    <h2>Welcome to your POKEDEX</h2>
-                    <input type='text' placeholder='Type your pokemon trainer name' {...register('pokemonTrainer', { required: true })} />
-                    <button>login</button>
+                    <h1 className='stroke'>Welcome Pokémon Master!</h1>
+                    <input className='stroke stroke-1' type='text' placeholder='Type your master pokémon name' {...register('pokemonTrainer', { required: true })} />
+                    <button className='blue'>login</button>
                 </form>
             </div>
             <ThemeBot />

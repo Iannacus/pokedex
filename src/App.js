@@ -24,22 +24,25 @@ function App() {
       <style>{`body {background-image: url('${bg}');}`}</style>
       <ProvideAuth >
         <Router>
-          <ProtectedRoute path='/pokedex/pokemon/:id/encounters'>
-            <Encounters />
-          </ProtectedRoute>
-          <ProtectedRoute path='/pokedex/pokemon/:id'>
-            <Pokemon />
-          </ProtectedRoute>
-          <ProvidePokemonContext >
-            <ProtectedRoute path='/pokedex'>
-              <Pokedex />
+          <Switch >
+            <Route exact path="/">  <Login /> </Route>
+            <ProtectedRoute path='/pokedex/pokemon/:id/encounters'>
+              <Encounters />
             </ProtectedRoute>
-            <ProtectedRoute path='/conf'>
-              <Conf />
+            <ProtectedRoute path='/pokedex/pokemon/:id'>
+              <Pokemon />
             </ProtectedRoute>
-          </ProvidePokemonContext>
-          <Route path="/login">  <Login /> </Route>
-          <Route path="/">  <Redirect to="/login" /> </Route>
+            <ProvidePokemonContext >
+              <ProtectedRoute path='/pokedex'>
+                <Pokedex />
+              </ProtectedRoute>
+              <ProtectedRoute path='/conf'>
+                <Conf />
+              </ProtectedRoute>
+            </ProvidePokemonContext>
+            <Route path="/login">  <Login /> </Route>
+
+          </Switch>
         </Router>
       </ProvideAuth>
 

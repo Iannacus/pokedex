@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import Search from './Search';
 import ThemeSup from './ThemeSup';
-import ConfigButton from './ConfigButton';
 import ThemeBot from './ThemeBot';
 import Pagination from './Pagination';
 import { useRouteMatch } from 'react-router-dom';
@@ -58,7 +57,6 @@ function Pokedex() {
     }, [data, number, startSlice, endSlice]);
 
     const handleConsult = (values) => {
-        //console.log(values.pokemon);
         setPokemonName(values.pokemon);
     }
 
@@ -91,14 +89,13 @@ function Pokedex() {
         <>
             <ThemeSup />
             <div className='pokegrid'>
-                <ConfigButton />
                 <Search
                     handdler={handdleType}
                     handleNumber={handleNumber}
                     handleConsult={handleConsult}
                 />
 
-                <div className="pokemons">
+                <div className="pokemons scroll">
                     {list}
                 </div>
 

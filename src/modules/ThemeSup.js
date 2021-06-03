@@ -28,8 +28,6 @@ function ThemeSup() {
                 <div className="left-line-circle"></div>
             </div>
             <div className="light s-light"></div>
-
-
         </div>
     )
 }

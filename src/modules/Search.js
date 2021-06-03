@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-function Search({ handdler, handleNumber, handleConsult }) {
+import ConfigButton from './ConfigButton'
+function Search({ handdler, handleConsult }) {
     const { handleSubmit, register } = useForm();
     const onSubmit = values => {
         handleConsult(values);
@@ -8,8 +9,8 @@ function Search({ handdler, handleNumber, handleConsult }) {
     return (
         <form className="poke-form" name="types" onSubmit={handleSubmit(onSubmit)}>
             <div className='select__form'>
-                <label htmlFor="searcher">Search By type</label>
-                <select className="searcher" id="" onChange={(e) => handdler(e)}>
+                <label htmlFor="searcher">Select Type</label>
+                <select className="searcher stroke stroke-1" id="" onChange={(e) => handdler(e)}>
                     <option value='0'>All</option>
                     <option value='1'>Normal</option>
                     <option value='2'>Fighting</option>
@@ -32,9 +33,10 @@ function Search({ handdler, handleNumber, handleConsult }) {
                 </select>
             </div>
             <div className='text__form'>
-                <input type='text' placeholder='Search by namae or pokemon number' {...register('pokemon', { required: true })} />
-                <button>Search</button>
+                <input className='text-input stroke stroke-1' type='text' placeholder='Type Name or Number' {...register('pokemon', { required: true })} />
+                <button className='yellow bg-blue'>Search</button>
             </div>
+            <ConfigButton />
         </form>
     )
 }
