@@ -54,7 +54,7 @@ function Pokedex() {
             setPokemonArray(data.slice(startSlice, endSlice));
             setIsNavigating(false);
         }
-    }, [data, number, startSlice, endSlice, isNavigating]);
+    }, [data, number, startSlice, endSlice]);
 
     const handleConsult = (values) => {
         setPokemonName(values.pokemon);
