@@ -10,7 +10,7 @@ function Thumbnail({ img, alt }) {
     }
     return (
         <>
-            <img src={`${img}`} alt={`${alt}`} width='300px' onClick={(e) => handleClick(e)}></img>
+            <img src={`${img}`} alt={`${alt}`} width='100%' onClick={(e) => handleClick(e)}></img>
         </>
     )
 }

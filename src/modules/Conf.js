@@ -9,8 +9,6 @@ import Menu from '../component/Menu';
 function Conf() {
 
     const { changeNumber } = usePokeContext();
-
-    console.log(usePokeContext());
     const handler = (value) => {
         changeNumber.change(value);
 
@@ -29,8 +27,8 @@ function Conf() {
             <ThemeSup />
             <div className='pokegrid'>
                 <div name="types">
-                    <label htmlFor="number">Select NUmber of Pokemons to display</label>
-                    <select className="number" id="number" onChange={(e) => handler(e.target.value)} >
+                    <label htmlFor="numberP">Select NUmber of Pokemons to display</label>
+                    <select className="numberP" id="number" onChange={(e) => handler(e.target.value)} >
                         <option value='4'>4</option>
                         <option value='8'>8</option>
                         <option value='12'>12</option>
@@ -38,8 +36,8 @@ function Conf() {
                         <option value='20'>20</option>
                         <option value='24'>24</option>
                     </select>
-
-                    <div className='backgrounds'>
+                    <h4>Select a background</h4>
+                    <div className='backgrounds scroll'>
                         {imgList}
                     </div>
                 </div>
