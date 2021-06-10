@@ -55,8 +55,6 @@ function Pokemon() {
             } else if (data.abilities.length > 1) {
                 setAbility2(data.abilities[1].ability.name);
             }
-
-
             if (data.types.length > 1) {
                 setType2(data.types[1].type.name)
             }
@@ -114,7 +112,7 @@ function Pokemon() {
                         </div>
                         <Link to={`${url}/encounters`} ><button>Encounters </button></Link>
                     </div>
-                    <div className='column-grid'>
+                    <div className='column-grid two'>
                         <div className='dos'>
                             <div className='cristal__animation-i' style={{ borderColor: `${color}` }}></div>
                             <div className='cristal__animation-d' style={{ borderColor: `${color2}` }}></div>
@@ -170,14 +168,11 @@ function Pokemon() {
                     <div className='column-grid invert three'>
                         <h3>Pokemon Moves</h3>
                         <div className='moves scroll'>
-
                             <ol>
                                 {moveList}
                             </ol>
-
                         </div>
                         <p class='number'> #{number}</p>
-
                     </div>
                 </div>
                 <Menu

@@ -38,11 +38,13 @@ function App() {
               <ProtectedRoute path='/conf'>
                 <Conf />
               </ProtectedRoute>
-              <Route exact path="/login">  <Login /> </Route>
-              <Route exact path="/">  <Login /> </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/">
+                <Login />
+              </Route>
             </ProvidePokemonContext>
-
-
           </Switch>
         </Router>
       </ProvideAuth>

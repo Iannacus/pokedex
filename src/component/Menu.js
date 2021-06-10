@@ -1,4 +1,7 @@
 import React from 'react';
+import homeButton from '../resources/img/home.png';
+import backButton from '../resources/img/back-arrow.png';
+import logoutButton from '../resources/img/log-out.png';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../provider/AuthProvider';
 
@@ -10,17 +13,17 @@ function Menu({ home, back }) {
         <div className='menu'>
             <div className='m-element'>
 
-                <i className="fas fa-sign-out-alt" onClick={() => singOut(() => { })}></i>
+                <img src={logoutButton} alt='logout-button' onClick={() => singOut(() => { })} />
             </div>
 
             <div className='m-element'>
                 <Link to={home}>
-                    <i className="fas fa-home"></i>
+                    <img src={homeButton} alt='home-Button' />
                 </Link>
             </div>
             <div className='m-element'>
                 <Link to={back}>
-                    <i className="fas fa-arrow-circle-left"></i>
+                    <img src={backButton} alt='back-button' />
                 </Link>
 
             </div>

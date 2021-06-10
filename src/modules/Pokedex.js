@@ -38,7 +38,9 @@ function Pokedex() {
 
     useEffect(() => {
         if (pokemonName !== '') {
+
             setData([{ pokemon: { name: `${pokemonName}`, url: `https://pokeapi.co/api/v2/pokemon/${pokemonName}/` } }])
+
         }
 
     }, [pokemonName])
